@@ -52,7 +52,7 @@ return array(
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'es',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -106,7 +106,11 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
+		'Way\Console\GuardLaravelServiceProvider',
+		'Barryvdh\MigrationGenerator\MigrationGeneratorServiceProvider',
+		'Way\Generators\GeneratorsServiceProvider',
+		'Orangehill\Iseed\IseedServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
 	),
 
 	/*
