@@ -9,7 +9,9 @@
 		"orangehill/iseed": "dev-master",
 		"way/guard-laravel": "dev-master",
 		"barryvdh/laravel-migration-generator": "dev-master",
-		"barryvdh/laravel-debugbar": "1.*"
+		"barryvdh/laravel-debugbar": "1.*",
+		"anahkiasen/former": "dev-master",
+		"laravelbook/ardent": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "3.7.*"
