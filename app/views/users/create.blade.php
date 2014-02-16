@@ -3,19 +3,18 @@
 @section('content')
 	<div class="row">
 		<div class="col-md-8 sign-up">
-			<h2>Sign up</h2>
+			<h2>Registro</h2>
 
-			{{ Former::framework('TwitterBootstrap3') }}
-			{{ Former::vertical_open()->action('users') }}
-				{{ Former::text('username')->help('El nombre que usarás para iniciar sesión, sólo puede contenter letras, números, guiones y subrayados (_).') }}
+			{{ Former::vertical_open()->action('users')->rules(User::$rules) }}
+				{{ Former::text('username')->help('El nombre que usarás para iniciar sesión, sólo puede contenter letras, números, guiones y subrayados (_).')->label('Nombe de usuario') }}
 				{{ Former::email('email') }}
-				{{ Former::text('display_name')->help('Este es el nombre que los demás usuarios podrán ver.') }}
-				{{ Former::password('password') }}
-				{{ Former::password('password_confirmation') }}
+				{{ Former::text('display_name')->help('Este es el nombre que los demás usuarios podrán ver.')->label('Apodo') }}
+				{{ Former::password('password')->label('Contraseña')->help('Cuanto más larga y complicada sea, más segura será tu contraseña.') }}
+				{{ Former::password('password_confirmation')->label('Repite la contraseña') }}
 
-				 {{ Former::checkbox('terms')->label('He leído y acepto las condiciones de uso') }}
+				 {{ Former::checkbox('terms')->label('He leído y acepto las <a href="/terms">condiciones de uso</a>')->inline() }}
 
-				{{ Former::submit('Sign up') }}
+				{{ Former::submit('Registrarse!') }}
 			{{ Former::close() }}
 		</div>
 

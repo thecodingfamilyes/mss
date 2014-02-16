@@ -1,5 +1,4 @@
 @if (!Auth::check())
-	{{ Former::framework('TwitterBootstrap3'); }}
 	{{ Former::open()->class('navbar-form navbar-right')->action('/sessions')->role('form') }}
 		{{ Former::text('username')->label(null)->placeholder('Username') }}
 		{{ Former::password('password')->label(null)->placeholder('Password') }}

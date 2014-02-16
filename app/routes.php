@@ -22,3 +22,7 @@ Route::resource('sessions', 'SessionsController');
 Route::get('login', 'SessionsController@create');
 
 Route::get('logout', 'SessionsController@destroy');
+
+Route::get('terms', function() {
+	return View::make('static/terms');
+});

@@ -113,6 +113,7 @@ return array(
 		'Orangehill\Iseed\IseedServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
 		'Former\FormerServiceProvider',
+		'Krucas\Notification\NotificationServiceProvider',
 	),
 
 	/*
@@ -180,6 +181,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 		'Former' => 'Former\Facades\Former',
+		'Notification' => 'Krucas\Notification\Facades\Notification',
 	),
 
 );
