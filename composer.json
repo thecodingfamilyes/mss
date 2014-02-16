@@ -11,7 +11,9 @@
 		"barryvdh/laravel-migration-generator": "dev-master",
 		"barryvdh/laravel-debugbar": "1.*",
 		"anahkiasen/former": "dev-master",
-		"laravelbook/ardent": "dev-master"
+		"laravelbook/ardent": "dev-master",
+		"caouecs/laravel4-lang": "dev-master",
+		"edvinaskrucas/notification": "2.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "3.7.*"

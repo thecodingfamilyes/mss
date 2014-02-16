@@ -20,10 +20,14 @@ class SessionsController extends BaseController {
 	 */
 	public function store()
 	{
-		if (Auth::attempt(Input::only('username', 'password'))) {
+		$credentials = Input::only('username', 'password');
+		$credentials['status'] = 'active';
+
+		if (Auth::attempt($credentials)) {
 		    return Redirect::intended('/');
 		} else {
-			Redirect::action('SessionsController@create');
+			Notification::error('Nombre de usuario o password incorrecto');
+			return Redirect::action('UsersController@create');
 		}
 	}
 
@@ -36,7 +40,8 @@ class SessionsController extends BaseController {
 	public function destroy()
 	{
 		Auth::logout();
-		Redirect::to('/');
+
+		return Redirect::back();
 	}
 
 }

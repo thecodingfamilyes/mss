@@ -33,6 +33,8 @@
 
       <!-- Begin page content -->
       <div class="container">
+        {{ Notification::showAll() }}
+
         @yield('content')
       </div>
 

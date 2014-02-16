@@ -34,9 +34,15 @@ class UsersController extends BaseController {
 		$result = $user->save();
 
 		if (!$result) {
+			Notification::error('No se ha podido efectuar el registro, por favor comprueba los errores e inténtalo de nuevo.');
 			return Redirect::action('UsersController@create')->withErrors($user->errors());
 		} else {
-			return Redirect::to('/')->with('message', 'User registration succesful');
+			if (!Auth::check()) {
+				Auth::login($user);
+			}
+
+			Notification::success('Te has registrado con éxito!');
+			return Redirect::intended('/');
 		}
 	}
 

@@ -50,6 +50,13 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 		};
 	}
 
+	//ROLES RELATIONSHIP
+	public function roles()
+    {
+        return $this->belongsToMany('Role', 'user_roles');
+    }
+
+
 	/**
 	 * Get the unique identifier for the user.
 	 *
@@ -87,6 +94,35 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 	    $this->status = 'active';
 
 	    return true;
+	}
+
+	public function isAdmin() {
+
+	}
+
+	public function setAdmin() {
+    	$admin = Role::admin()->get()->toArray();
+    	if (!empty($admin)) {
+    		$this->roles()->attach($admin[0]['id']);
+    	}
+    }
+
+    public function setModerator() {
+    	$moderator = Role::moderator()->get()->toArray();
+    	if (!empty($moderator)) {
+    		$this->roles()->attach($moderator[0]['id']);
+    	}
+    }
+
+    public function setRegistered() {
+    	$registered = Role::registered()->get()->toArray();
+    	if (!empty($registered)) {
+    		$this->roles()->attach($registered[0]['id']);
+    	}
+    }
+
+	public function afterCreate() {
+		$this->setRegistered();
 	}
 
 }
