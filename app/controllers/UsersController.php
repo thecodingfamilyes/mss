@@ -30,6 +30,14 @@ class UsersController extends BaseController {
 	 */
 	public function store()
 	{
+
+        $rules =  array('captcha' => array('required', 'captcha'));
+        $validator = Validator::make(Input::only('captcha'), $rules);
+        if ($validator->fails()) {
+            Notification::error('No se ha podido efectuar el registro, el captcha es incorrecto.');
+            return Redirect::action('UsersController@create')->withInput(Input::except('captcha', 'password', 'password_confirmation'));
+        }
+
 		$user = new User;
 		$result = $user->save();
 

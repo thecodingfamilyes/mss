@@ -12,7 +12,16 @@
 				{{ Former::password('password')->label('Contraseña')->help('Cuanto más larga y complicada sea, más segura será tu contraseña.') }}
 				{{ Former::password('password_confirmation')->label('Repite la contraseña') }}
 
-				 {{ Former::checkbox('terms')->label('He leído y acepto las <a href="/terms">condiciones de uso</a>')->inline() }}
+				<div class="captcha-field">
+				 	{{
+				 		Former::text('captcha')
+				 			->prepend(HTML::image(Captcha::img(), 'Captcha image'))
+				 			->help('Escribe los caracteres que ves en la imagen. Esto sirve para asegurarnos de que no eres un bot :)')
+				 	}}
+
+				</div>
+
+				{{ Former::checkbox('terms')->label(null)->text('He leído y acepto las <a href="/terms">condiciones de uso</a>')->inline() }}
 
 				{{ Former::submit('Registrarse!') }}
 			{{ Former::close() }}

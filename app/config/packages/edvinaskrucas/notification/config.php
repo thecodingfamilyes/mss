@@ -64,7 +64,7 @@ return array(
     'default_formats'                       => array(
 
         'default'               => array(
-
+            'error' => '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> :message</div>',
         ),
 
     ),

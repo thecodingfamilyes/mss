@@ -114,6 +114,7 @@ return array(
 		'Barryvdh\Debugbar\ServiceProvider',
 		'Former\FormerServiceProvider',
 		'Krucas\Notification\NotificationServiceProvider',
+		'Mews\Captcha\CaptchaServiceProvider',
 	),
 
 	/*
@@ -182,6 +183,7 @@ return array(
 
 		'Former' => 'Former\Facades\Former',
 		'Notification' => 'Krucas\Notification\Facades\Notification',
+		'Captcha' => 'Mews\Captcha\Facades\Captcha',
 	),
 
 );

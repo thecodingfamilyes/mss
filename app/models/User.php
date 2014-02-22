@@ -30,6 +30,11 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 	protected $fillable = array('username', 'display_name', 'email', 'password', 'password_confirmation', 'terms');
 
 /**
+ * Appended data
+ */
+	protected $appends = array('is_admin');
+
+/**
  * Validation rules
  */
 	public static $rules = array(
@@ -45,7 +50,7 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 		parent::__construct($attributes);
 
 		$this->purgeFilters[] = function($key) {
-		$purge = array('password_confirmation', 'terms');
+		$purge = array('password_confirmation', 'terms', 'captcha');
 			return ! in_array($key, $purge);
 		};
 	}
@@ -87,6 +92,20 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 		return $this->email;
 	}
 
+	public function getIsAdminAttribute() {
+		return $this->hasRole('admin');
+	}
+
+ /**
+  * Find out if user has a specific role
+  *
+  * @return boolean
+  */
+    public function hasRole($check)
+    {
+        return in_array($check, array_fetch($this->roles->toArray(), 'name'));
+    }
+
 	public function beforeSave() {
 	    // if there's a new password, hash it
 
@@ -94,10 +113,6 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 	    $this->status = 'active';
 
 	    return true;
-	}
-
-	public function isAdmin() {
-
 	}
 
 	public function setAdmin() {
