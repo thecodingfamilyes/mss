@@ -19,6 +19,8 @@ Route::get('/', function()
 Route::resource('users', 'UsersController');
 Route::resource('sessions', 'SessionsController');
 
+Route::controller('password', 'RemindersController');
+
 Route::get('login', 'SessionsController@create');
 
 Route::get('logout', 'SessionsController@destroy');
