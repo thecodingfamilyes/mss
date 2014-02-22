@@ -4,3 +4,9 @@
 	{{ Former::password('password')->label('Contraseña') }}
 	{{ Former::submit('Entrar') }}
 {{ Former::close() }}
+
+<div class="login-help">
+	<p>
+		<?php echo link_to_action('RemindersController@getRemind', '¿Has olvidado la contraseña?'); ?>
+	</p>
+</div>
