@@ -1,9 +1,12 @@
-<?php
+<?php namespace Algm\Mss\Models\User;
 
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Zizaco\Entrust\HasRole;
 
 class User extends \LaravelBook\Ardent\Ardent implements UserInterface, RemindableInterface {
+
+	use HasRole;
 
 	public $autoHydrateEntityFromInput = true;
 	public $autoPurgeRedundantAttributes = true;
@@ -55,11 +58,6 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 		};
 	}
 
-	//ROLES RELATIONSHIP
-	public function roles()
-    {
-        return $this->belongsToMany('Role', 'user_roles');
-    }
 
 
 	/**
@@ -96,16 +94,6 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 		return $this->hasRole('admin');
 	}
 
- /**
-  * Find out if user has a specific role
-  *
-  * @return boolean
-  */
-    public function hasRole($check)
-    {
-        return in_array($check, array_fetch($this->roles->toArray(), 'name'));
-    }
-
 	public function beforeSave() {
 	    // if there's a new password, hash it
 
@@ -116,7 +104,7 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 	}
 
 	public function setAdmin() {
-    	$admin = Role::admin()->get()->toArray();
+		$admin = Role::admin()->get()->toArray();
     	if (!empty($admin)) {
     		$this->roles()->attach($admin[0]['id']);
     	}

@@ -1,6 +1,20 @@
-<?php
+<?php namespace Algm\Mss\Controllers\User;
 
-class UsersController extends BaseController {
+use \View;
+use \Validator;
+use \Notification;
+use \Input;
+use \Redirect;
+use \Auth;
+use \Algm\Mss\Repositories\User\UserRepository as User;
+
+class UsersController extends \Algm\Mss\Controllers\BaseController {
+
+	protected $User;
+
+	public function __construct(User $user) {
+		$this->User = $user;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +23,7 @@ class UsersController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('users.index');
+		return View::make('users.index');
 	}
 
 	/**
@@ -19,8 +33,7 @@ class UsersController extends BaseController {
 	 */
 	public function create()
 	{
-		Former::config('fetch_errors', true);
-        return View::make('users.create');
+		return View::make('users.create');
 	}
 
 	/**
@@ -30,16 +43,14 @@ class UsersController extends BaseController {
 	 */
 	public function store()
 	{
+		$rules =  array('captcha' => array('required', 'captcha'));
+		$validator = Validator::make(Input::only('captcha'), $rules);
+		if ($validator->fails()) {
+			Notification::error('No se ha podido efectuar el registro, el captcha es incorrecto.');
+			return Redirect::action('UsersController@create')->withInput(Input::except('captcha', 'password', 'password_confirmation'));
+		}
 
-        $rules =  array('captcha' => array('required', 'captcha'));
-        $validator = Validator::make(Input::only('captcha'), $rules);
-        if ($validator->fails()) {
-            Notification::error('No se ha podido efectuar el registro, el captcha es incorrecto.');
-            return Redirect::action('UsersController@create')->withInput(Input::except('captcha', 'password', 'password_confirmation'));
-        }
-
-		$user = new User;
-		$result = $user->save();
+		list($result, $user) = $this->User->create(Input::all());
 
 		if (!$result) {
 			Notification::error('No se ha podido efectuar el registro, por favor comprueba los errores e inténtalo de nuevo.');
@@ -62,7 +73,7 @@ class UsersController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('users.show');
+		return View::make('users.show');
 	}
 
 	/**
@@ -73,7 +84,7 @@ class UsersController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('users.edit');
+		return View::make('users.edit');
 	}
 
 	/**

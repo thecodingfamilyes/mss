@@ -14,7 +14,8 @@
 		"laravelbook/ardent": "dev-master",
 		"caouecs/laravel4-lang": "dev-master",
 		"edvinaskrucas/notification": "2.*",
-		"mews/captcha": "dev-master"
+		"mews/captcha": "dev-master",
+		"zizaco/entrust": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "3.7.*"
@@ -22,12 +23,13 @@
 	"autoload": {
 		"classmap": [
 			"app/commands",
-			"app/controllers",
-			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+		"psr-4": {
+			"Algm\\": "src/Algm"
+		}
 	},
 	"scripts": {
 		"post-install-cmd": [

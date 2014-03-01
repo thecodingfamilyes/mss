@@ -1,6 +1,13 @@
-<?php
+<?php namespace Algm\Mss\Controllers\User;
 
-class RemindersController extends Controller {
+use \View;
+use \Password;
+use \App;
+use \Input;
+use \Notification;
+use \Hash;
+
+class RemindersController extends \Algm\Mss\Controllers\BaseController {
 
 	/**
 	 * Display the password reminder view.
