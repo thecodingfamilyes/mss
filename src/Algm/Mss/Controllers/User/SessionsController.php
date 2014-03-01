@@ -1,6 +1,12 @@
-<?php
+<?php namespace Algm\Mss\Controllers\User;
 
-class SessionsController extends BaseController {
+use \Auth;
+use \View;
+use \Input;
+use \Redirect;
+use \Notification;
+
+class SessionsController extends \Algm\Mss\Controllers\BaseController {
 
 
 	/**
@@ -10,7 +16,7 @@ class SessionsController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('sessions.create');
+		return View::make('sessions.create');
 	}
 
 	/**
@@ -24,7 +30,7 @@ class SessionsController extends BaseController {
 		$credentials['status'] = 'active';
 
 		if (Auth::attempt($credentials)) {
-		    return Redirect::intended('/');
+			return Redirect::intended('/');
 		} else {
 			Notification::error('Nombre de usuario o password incorrecto');
 			return Redirect::action('UsersController@create');

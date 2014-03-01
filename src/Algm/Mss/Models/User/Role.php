@@ -1,13 +1,8 @@
-<?php
+<?php namespace Algm\Mss\Models\User;
 
-class Role extends \LaravelBook\Ardent\Ardent {
+use Zizaco\Entrust\EntrustRole;
 
-	public $timestamps = true;
-
-	public function users()
-    {
-        return $this->belongsToMany('User', 'user_roles');
-    }
+class Role extends EntrustRole {
 
     public function scopeAdmin($query) {
     	return $query->where('name', '=', 'admin');
