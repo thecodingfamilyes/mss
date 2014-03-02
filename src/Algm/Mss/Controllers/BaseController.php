@@ -1,6 +1,6 @@
-<?php
+<?php namespace Algm\Mss\Controllers;
 
-class BaseController extends Controller {
+class BaseController extends \Illuminate\Routing\Controller {
 
 	/**
 	 * Setup the layout used by the controller.

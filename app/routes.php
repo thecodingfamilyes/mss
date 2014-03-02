@@ -15,3 +15,16 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::resource('users', 'UsersController');
+Route::resource('sessions', 'SessionsController');
+
+Route::controller('password', 'RemindersController');
+
+Route::get('login', 'SessionsController@create');
+
+Route::get('logout', 'SessionsController@destroy');
+
+Route::get('terms', function() {
+	return View::make('static/terms');
+});

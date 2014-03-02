@@ -79,3 +79,6 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+//Macros
+require app_path().'/lib/macros/bootstrapforms.php';

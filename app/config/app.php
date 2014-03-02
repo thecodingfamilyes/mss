@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'Europe/Madrid',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -106,11 +106,20 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Way\Console\GuardLaravelServiceProvider',
+
+		//vendor
 		'Barryvdh\MigrationGenerator\MigrationGeneratorServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Orangehill\Iseed\IseedServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
+		'Former\FormerServiceProvider',
+		'Krucas\Notification\NotificationServiceProvider',
+		'Mews\Captcha\CaptchaServiceProvider',
+		'Zizaco\Entrust\EntrustServiceProvider',
+
+		// MSS
+		'Algm\Mss\Services\RepositoryServiceProvider'
+
 	),
 
 	/*
@@ -177,6 +186,25 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 
+		'Former' => 'Former\Facades\Former',
+		'Notification' => 'Krucas\Notification\Facades\Notification',
+		'Captcha' => 'Mews\Captcha\Facades\Captcha',
+		'Entrust'    => 'Zizaco\Entrust\EntrustFacade',
+
+		// -----------------------------------------------------------
+		// Controllers
+		// -----------------------------------------------------------
+		'BaseController' => 'Algm\Mss\Controllers\BaseController',
+		'UsersController' => 'Algm\Mss\Controllers\User\UsersController',
+		'RemindersController' => 'Algm\Mss\Controllers\User\RemindersController',
+		'SessionsController' => 'Algm\Mss\Controllers\User\SessionsController',
+
+		// -----------------------------------------------------------
+		// Models
+		// -----------------------------------------------------------
+		'User' => 'Algm\Mss\Models\User\User',
+		'Permission' => 'Algm\Mss\Models\User\Permission',
+		'Role' => 'Algm\Mss\Models\User\Role',
 	),
 
 );

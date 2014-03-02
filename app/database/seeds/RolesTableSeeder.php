@@ -9,23 +9,27 @@ class RolesTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		\DB::table('roles')->truncate();
-        
 		\DB::table('roles')->insert(array (
-			0 => 
+			0 =>
 			array (
 				'id' => '3',
 				'name' => 'admin',
+				'created_at' => date('Y-m-d H:i:s'),
+				'updated_at' => date('Y-m-d H:i:s')
 			),
-			1 => 
+			1 =>
 			array (
 				'id' => '2',
 				'name' => 'moderator',
+				'created_at' => date('Y-m-d H:i:s'),
+				'updated_at' => date('Y-m-d H:i:s')
 			),
-			2 => 
+			2 =>
 			array (
 				'id' => '1',
 				'name' => 'user',
+				'created_at' => date('Y-m-d H:i:s'),
+				'updated_at' => date('Y-m-d H:i:s')
 			),
 		));
 	}

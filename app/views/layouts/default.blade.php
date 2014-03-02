@@ -25,12 +25,16 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="/">Home</a></li>
             </ul>
+
+            {{ View::make('toolbar/login') }}
           </div><!--/.nav-collapse -->
         </div>
       </div>
 
       <!-- Begin page content -->
       <div class="container">
+        {{ Notification::showAll() }}
+
         @yield('content')
       </div>
 
