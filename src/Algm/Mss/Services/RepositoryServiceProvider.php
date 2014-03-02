@@ -13,10 +13,5 @@ class RepositoryServiceProvider extends ServiceProvider {
 			'Algm\Mss\Repositories\User\UserRepository',
 			'Algm\Mss\Repositories\User\ArdentUserRepository'
 		);
-
- /*   $this->app->bind(
-      'Cribbb\Storage\User\UserRepository',
-      'Cribbb\Storage\User\EloquentUserRepository'
-    );*/
 	}
 }

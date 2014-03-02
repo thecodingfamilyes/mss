@@ -7,7 +7,6 @@
 		"laravel/framework": "4.1.*",
 		"way/generators": "dev-master",
 		"orangehill/iseed": "dev-master",
-		"way/guard-laravel": "dev-master",
 		"barryvdh/laravel-migration-generator": "dev-master",
 		"barryvdh/laravel-debugbar": "1.*",
 		"anahkiasen/former": "dev-master",
@@ -15,10 +14,14 @@
 		"caouecs/laravel4-lang": "dev-master",
 		"edvinaskrucas/notification": "2.*",
 		"mews/captcha": "dev-master",
-		"zizaco/entrust": "dev-master"
+		"zizaco/entrust": "dev-master",
+		"zizaco/factory-muff": "dev-master"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "3.7.*"
+		"phpunit/phpunit": "3.7.*",
+		"way/phpunit-wrappers": "dev-master",
+		"mockery/mockery": "dev-master",
+		"way/laravel-test-helpers": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

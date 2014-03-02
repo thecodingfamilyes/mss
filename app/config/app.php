@@ -107,7 +107,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'Way\Console\GuardLaravelServiceProvider',
+		//vendor
 		'Barryvdh\MigrationGenerator\MigrationGeneratorServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Orangehill\Iseed\IseedServiceProvider',

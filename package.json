@@ -1,0 +1,20 @@
+{
+  "name": "mss",
+  "description": "mss",
+  "repository": [],
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.5.5",
+    "gulp-util": "^2.2.14",
+    "gulp-phpunit": "^0.5.0",
+    "gulp-notify": "^1.0.0-beta",
+    "gulp-ruby-sass": "^0.4.0",
+    "gulp-compass": "^1.1.4",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-coffee": "^1.4.1"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

@@ -5,3 +5,8 @@ composer.lock
 .DS_Store
 Thumbs.db
 .sass-cache
+/node_modules
+/assets/vendor
+/.sass-cache
+/public.tmp
+/public/assets
