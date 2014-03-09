@@ -6,6 +6,12 @@ class UserModelTest extends TestCase {
 
 	use Way\Tests\ModelHelpers;
 
+	public function setUp() {
+		parent::setUp();
+
+		User::boot();
+	}
+
 	public function testValidationFailsIfEmpty() {
 		$user = new User();
 
@@ -72,8 +78,6 @@ class UserModelTest extends TestCase {
 			'password_confirmation' => 'test',
 			'terms' => 1
 		]);
-
-		$user->afterCreate();
 
 		$this->assertTrue($user->hasRole('user'));
 	}
