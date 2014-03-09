@@ -6,6 +6,8 @@ use \App;
 use \Input;
 use \Notification;
 use \Hash;
+use \Lang;
+use \Redirect;
 
 class RemindersController extends \Algm\Mss\Controllers\BaseController {
 
