@@ -82,6 +82,15 @@ class UserModelTest extends TestCase {
 		$this->assertTrue($user->hasRole('user'));
 	}
 
+	public function testHasAdminRoleOnSetting() {
+		$user = $this->_getValidUser();
+		$user->save();
+
+		$user->setAdmin();
+
+		$this->assertTrue($user->is_admin);
+	}
+
 	protected function _getValidUser($override = array()) {
 		$defaultOverride = [
 			'terms' => 1

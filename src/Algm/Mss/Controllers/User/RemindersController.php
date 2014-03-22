@@ -28,8 +28,9 @@ class RemindersController extends \Algm\Mss\Controllers\BaseController {
 	 */
 	public function postRemind()
 	{
-		switch ($response = Password::remind(Input::only('email')))
-		{
+		switch ($response = Password::remind(Input::only('email'), function($message) {
+			$message->subject(trans('[MSS] Recuperación de contraseña'));
+		})) {
 			case Password::INVALID_USER:
 				Notification::error(Lang::get($response));
 				return Redirect::back();

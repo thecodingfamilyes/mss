@@ -99,7 +99,6 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 
 		$this->hash = Hash::make(uniqid());
 		$this->status = 'active';
-		var_dump('BEFORE');
 
 		return true;
 	}
@@ -109,6 +108,8 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 		if (!empty($admin)) {
 			$this->roles()->attach($admin[0]['id']);
 		}
+
+		return $this;
 	}
 
 	public function setModerator() {
@@ -116,6 +117,8 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 		if (!empty($moderator)) {
 			$this->roles()->attach($moderator[0]['id']);
 		}
+
+		return $this;
 	}
 
 	public function setRegistered() {
@@ -123,6 +126,8 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 		if (!empty($registered)) {
 			$this->roles()->attach($registered[0]['id']);
 		}
+
+		return $this;
 	}
 
 	public function afterCreate() {

@@ -39,4 +39,12 @@ class ArdentUserRepository implements UserRepository
 
 		return User::find($id);
 	}
+
+/**
+ * Builds a query and returns it for allowing execution
+ */
+	public function where() {
+		return User::where(func_get_args());
+	}
+
 }
