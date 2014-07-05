@@ -6,6 +6,12 @@ class UserModelTest extends TestCase {
 
 	use Way\Tests\ModelHelpers;
 
+	public function setUp() {
+		parent::setUp();
+
+		User::boot();
+	}
+
 	public function testValidationFailsIfEmpty() {
 		$user = new User();
 
@@ -73,9 +79,16 @@ class UserModelTest extends TestCase {
 			'terms' => 1
 		]);
 
-		$user->afterCreate();
-
 		$this->assertTrue($user->hasRole('user'));
+	}
+
+	public function testHasAdminRoleOnSetting() {
+		$user = $this->_getValidUser();
+		$user->save();
+
+		$user->setAdmin();
+
+		$this->assertTrue($user->is_admin);
 	}
 
 	protected function _getValidUser($override = array()) {

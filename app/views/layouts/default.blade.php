@@ -3,6 +3,8 @@
 <head>
 	<title>MSS</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 	{{ HTML::style('css/styles.css'); }}
 </head>
 <body>
@@ -26,7 +28,8 @@
               <li class="active"><a href="/">Home</a></li>
             </ul>
 
-            {{ View::make('toolbar/login') }}
+            @include('toolbar/login')
+
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -46,5 +49,11 @@
         <p class="text-muted">Place sticky footer content here.</p>
       </div>
     </div>
+
+     {{ Html::script('js/lib/jquery.js') }}
+     {{ HTML::script('js/bootstrap/transition.js') }}
+     {{ HTML::script('js/bootstrap/collapse.js') }}
+     {{ HTML::script('js/bootstrap/alert.js') }}
+
 </body>
 </html>

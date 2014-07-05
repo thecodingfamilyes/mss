@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-		"way/generators": "dev-master",
+		"way/generators": "1.*",
 		"orangehill/iseed": "dev-master",
 		"barryvdh/laravel-migration-generator": "dev-master",
 		"barryvdh/laravel-debugbar": "1.*",

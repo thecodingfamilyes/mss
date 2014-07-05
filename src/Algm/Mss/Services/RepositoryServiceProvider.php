@@ -10,8 +10,8 @@ class RepositoryServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		$this->app->bind(
-			'Algm\Mss\Repositories\User\UserRepository',
-			'Algm\Mss\Repositories\User\ArdentUserRepository'
+			'Algm\Mss\Modules\User\Repositories\UserRepository',
+			'Algm\Mss\Modules\User\Repositories\ArdentUserRepository'
 		);
 	}
 }

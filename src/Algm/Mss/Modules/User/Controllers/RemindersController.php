@@ -1,4 +1,4 @@
-<?php namespace Algm\Mss\Controllers\User;
+<?php namespace Algm\Mss\Modules\User\Controllers;
 
 use \View;
 use \Password;

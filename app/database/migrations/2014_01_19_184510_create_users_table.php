@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration {
 			$table->string('password', 80);
 			$table->string('hash', 80);
 			$table->string('status', 255);
+			$table->string('rememeber_token', 100)-nullable();
 			$table->datetime('logged_at')->nullable();
 			$table->datetime('banned_at')->nullable();
 			$table->datetime('ban_expires_at')->nullable();

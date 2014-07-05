@@ -1,4 +1,4 @@
-<?php namespace Algm\Mss\Repositories\User;
+<?php namespace Algm\Mss\Modules\User\Repositories;
 
 /**
  * User repository interface

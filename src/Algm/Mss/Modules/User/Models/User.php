@@ -1,4 +1,4 @@
-<?php namespace Algm\Mss\Models\User;
+<?php namespace Algm\Mss\Modules\User\Models;
 
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
@@ -132,6 +132,21 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 
 	public function afterCreate() {
 		$this->setRegistered();
+	}
+
+	public function getRememberToken()
+	{
+		return $this->remember_token;
+	}
+
+	public function setRememberToken($value)
+	{
+		$this->remember_token = $value;
+	}
+
+	public function getRememberTokenName()
+	{
+		return 'remember_token';
 	}
 
 }

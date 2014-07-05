@@ -195,16 +195,16 @@ return array(
 		// Controllers
 		// -----------------------------------------------------------
 		'BaseController' => 'Algm\Mss\Controllers\BaseController',
-		'UsersController' => 'Algm\Mss\Controllers\User\UsersController',
-		'RemindersController' => 'Algm\Mss\Controllers\User\RemindersController',
-		'SessionsController' => 'Algm\Mss\Controllers\User\SessionsController',
+		'UsersController' => 'Algm\Mss\Modules\User\Controllers\UsersController',
+		'RemindersController' => 'Algm\Mss\Modules\User\Controllers\RemindersController',
+		'SessionsController' => 'Algm\Mss\Modules\User\Controllers\SessionsController',
 
 		// -----------------------------------------------------------
 		// Models
 		// -----------------------------------------------------------
-		'User' => 'Algm\Mss\Models\User\User',
-		'Permission' => 'Algm\Mss\Models\User\Permission',
-		'Role' => 'Algm\Mss\Models\User\Role',
+		'User' => 'Algm\Mss\Modules\User\Models\User',
+		'Permission' => 'Algm\Mss\Modules\User\Models\Permission',
+		'Role' => 'Algm\Mss\Modules\User\Models\Role',
 	),
 
 );
