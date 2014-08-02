@@ -50,6 +50,7 @@
     </div>
 
      {{ Html::script('js/lib/jquery.js') }}
+     {{ Html::script('js/lib/angular.js') }}
      {{ HTML::script('js/bootstrap/transition.js') }}
      {{ HTML::script('js/bootstrap/collapse.js') }}
      {{ HTML::script('js/bootstrap/alert.js') }}

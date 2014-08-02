@@ -55,9 +55,16 @@ class User extends \LaravelBook\Ardent\Ardent implements UserInterface, Remindab
 		parent::__construct($attributes);
 
 		$this->purgeFilters[] = function($key) {
-		$purge = array('password_confirmation', 'terms', 'captcha');
+			$purge = array('password_confirmation', 'terms', 'captcha');
 			return ! in_array($key, $purge);
 		};
+	}
+
+/**
+ * Has many brotherhood
+ */
+	public function brotherhoods() {
+		return $this->hasMany('Brotherhood');
 	}
 
 	/**

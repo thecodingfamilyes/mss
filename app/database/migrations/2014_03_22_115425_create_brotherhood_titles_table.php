@@ -20,7 +20,6 @@ class CreateBrotherhoodTitlesTable extends Migration {
 		});
 	}
 
-
 	/**
 	 * Reverse the migrations.
 	 *

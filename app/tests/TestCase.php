@@ -9,6 +9,9 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 		$this->prepareForTests();
 	}
 
+	public function testsAreWorkingTest() {
+		$this->assertTrue(true);
+	}
 
 	/**
 	 * Creates the application.

@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Route::get('/', function() {
+	if (Auth::check()) {
+		return View::make('brotherhoods/dashboard');
+	}
+
+	return View::make('home');
 });
 
 Route::get('/style', function()
@@ -32,4 +35,10 @@ Route::get('logout', 'SessionsController@destroy');
 
 Route::get('terms', function() {
 	return View::make('static/terms');
+});
+
+Route::group([
+	'prefix' => 'api'
+], function() {
+	Route::resource('brotherhoods', 'BrotherhoodsApiController');
 });

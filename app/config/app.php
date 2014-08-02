@@ -194,17 +194,25 @@ return array(
 		// -----------------------------------------------------------
 		// Controllers
 		// -----------------------------------------------------------
+
+		//users
 		'BaseController' => 'Algm\Mss\Controllers\BaseController',
 		'UsersController' => 'Algm\Mss\Modules\User\Controllers\UsersController',
 		'RemindersController' => 'Algm\Mss\Modules\User\Controllers\RemindersController',
 		'SessionsController' => 'Algm\Mss\Modules\User\Controllers\SessionsController',
 
+		//brotherhoods
+		'BrotherhoodsApiController' => 'Algm\Mss\Modules\Brotherhood\Controllers\BrotherhoodsApiController',
+
 		// -----------------------------------------------------------
 		// Models
 		// -----------------------------------------------------------
+		//users
 		'User' => 'Algm\Mss\Modules\User\Models\User',
 		'Permission' => 'Algm\Mss\Modules\User\Models\Permission',
 		'Role' => 'Algm\Mss\Modules\User\Models\Role',
+		//brotherhoods
+		'Brotherhood' => 'Algm\Mss\Modules\Brotherhood\Models\Brotherhood',
 	),
 
 );

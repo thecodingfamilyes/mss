@@ -15,13 +15,15 @@
 		"edvinaskrucas/notification": "2.*",
 		"mews/captcha": "dev-master",
 		"zizaco/entrust": "dev-master",
-		"zizaco/factory-muff": "dev-master"
+		"zizaco/factory-muff": "dev-master",
+		"league/fractal": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "3.7.*",
 		"way/phpunit-wrappers": "dev-master",
 		"mockery/mockery": "dev-master",
-		"way/laravel-test-helpers": "dev-master"
+		"way/laravel-test-helpers": "dev-master",
+		"behat/behat": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
