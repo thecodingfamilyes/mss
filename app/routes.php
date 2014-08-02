@@ -16,6 +16,11 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::get('/style', function()
+{
+	return View::make('styleguide');
+});
+
 Route::resource('users', 'UsersController');
 Route::resource('sessions', 'SessionsController');
 

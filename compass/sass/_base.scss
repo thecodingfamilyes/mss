@@ -7,16 +7,6 @@ body {
   /* The html and body elements cannot have any padding or margin. */
 }
 
-/* Wrapper for page content to push down footer */
-#wrap {
-  min-height: 100%;
-  height: auto;
-  /* Negative indent footer by its height */
-  margin: 0 auto -60px;
-  /* Pad bottom by footer height */
-  padding: 0 0 60px;
-}
-
 /* Set the fixed height of the footer here */
 #footer {
   height: 60px;
@@ -29,7 +19,7 @@ body {
 /* Not required for template or sticky footer method. */
 
 #wrap > .container {
-  padding: 60px 15px 0;
+  padding: 60px 15px 20px;
 }
 .container .text-muted {
   margin: 20px 0;
@@ -40,8 +30,72 @@ body {
   padding-right: 15px;
 }
 
+#footer {
+  a {
+    color: $gray-light;
+  }
+
+}
+
 code {
   font-size: 80%;
 }
 
-@include sticky-footer(54px, "#wrap", "#root-footer", "#footer")
+//tabs
+.nav-tabs {
+  border: none;
+
+  >li {
+    margin-bottom: 1px;
+
+    >a {
+      color: $gray-light;
+      padding-bottom: $padding-small-vertical;
+      border: none;
+      border-bottom: 2px solid $gray-lighter;
+
+      &:hover, &:focus {
+        padding-bottom: $padding-small-vertical;
+        background-color: transparent;
+        border: none;
+        color: $brand-primary;
+        border-bottom: 2px solid $brand-primary;
+      }
+    }
+
+    &.open {
+      >a {
+        padding-bottom: $padding-small-vertical;
+        border-bottom: 2px solid transparent;
+        color: $brand-primary;
+
+        &:hover, &:focus {
+          color: $brand-primary;
+          background-color: transparent;
+          border: none;
+          border-bottom: 2px solid $brand-primary;
+        }
+      }
+    }
+
+    &.active {
+      margin-bottom: 1px;
+
+      > a {
+        color: $brand-primary;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid darken($brand-primary, 3%);
+
+        &:hover {
+          color: $brand-primary;
+          background-color: transparent;
+          border: none;
+          border-bottom: 2px solid darken($brand-primary, 3%);
+        }
+      }
+    }
+  }
+}
+
+@include sticky-footer(44px, "#wrap", "#root-footer", "#footer")

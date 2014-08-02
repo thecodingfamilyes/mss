@@ -5,6 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+  <link href='http://fonts.googleapis.com/css?family=Lato|PT+Sans|Inconsolata' rel='stylesheet' type='text/css'>
 	{{ HTML::style('css/styles.css'); }}
 </head>
 <body>
@@ -45,15 +46,17 @@
     </div>
 
     <div id="footer">
-      <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
-      </div>
+      @include('common/footer')
     </div>
 
      {{ Html::script('js/lib/jquery.js') }}
      {{ HTML::script('js/bootstrap/transition.js') }}
      {{ HTML::script('js/bootstrap/collapse.js') }}
      {{ HTML::script('js/bootstrap/alert.js') }}
+     {{ HTML::script('js/bootstrap/dropdown.js') }}
+     {{ HTML::script('js/bootstrap/tooltip.js') }}
+     {{ HTML::script('js/bootstrap/modal.js') }}
+     {{ HTML::script('js/bootstrap/popover.js') }}
 
 </body>
 </html>
