@@ -2,6 +2,8 @@
 
 return array(
 
+	'cipher' => MCRYPT_RIJNDAEL_256,
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Debug Mode
@@ -116,6 +118,7 @@ return array(
 		'Krucas\Notification\NotificationServiceProvider',
 		'Mews\Captcha\CaptchaServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
+		'Frozennode\Administrator\AdministratorServiceProvider',
 
 		// MSS
 		'Algm\Mss\Services\RepositoryServiceProvider'

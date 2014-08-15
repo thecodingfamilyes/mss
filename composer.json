@@ -4,7 +4,7 @@
 	"keywords": ["game", "mss"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*",
+		"laravel/framework": "4.*",
 		"way/generators": "1.*",
 		"orangehill/iseed": "dev-master",
 		"barryvdh/laravel-migration-generator": "dev-master",
@@ -12,10 +12,11 @@
 		"anahkiasen/former": "dev-master",
 		"laravelbook/ardent": "2.*",
 		"caouecs/laravel4-lang": "dev-master",
-		"edvinaskrucas/notification": "2.*",
+		"edvinaskrucas/notification": "3.*",
 		"mews/captcha": "dev-master",
 		"zizaco/entrust": "dev-master",
-		"zizaco/factory-muff": "dev-master"
+		"zizaco/factory-muff": "dev-master",
+		"frozennode/administrator": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "3.7.*",
