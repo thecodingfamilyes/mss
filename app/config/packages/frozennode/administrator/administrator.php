@@ -14,7 +14,7 @@ return array(
 	 *
 	 * @type string
 	 */
-	'title' => 'Admin',
+	'title' => 'MSS admin',
 
 	/**
 	 * The path to your model config directory
@@ -51,7 +51,9 @@ return array(
 	 * 		'Analytics' => array('E-Commerce' => 'page.ecommerce.analytics'),
 	 *	)
 	 */
-	'menu' => array(),
+	'menu' => [
+		'usuarios'
+	],
 
 	/**
 	 * The permission option is the highest-level authentication check that lets you define a closure that should return true if the current user
@@ -61,7 +63,7 @@ return array(
 	 */
 	'permission'=> function()
 	{
-		return Auth::check();
+		return Auth::check() && Auth::user()->is_admin;
 	},
 
 	/**
@@ -70,14 +72,14 @@ return array(
 	 *
 	 * @type bool
 	 */
-	'use_dashboard' => false,
+	'use_dashboard' => true,
 
 	/**
 	 * If you want to create a dashboard view, provide the view string here.
 	 *
 	 * @type string
 	 */
-	'dashboard_view' => '',
+	'dashboard_view' => 'administrator.dashboard',
 
 	/**
 	 * The menu item that should be used as the default landing page of the administrative section
@@ -98,14 +100,14 @@ return array(
 	 *
 	 * @type string
 	 */
-	'login_path' => 'user/login',
+	'login_path' => 'users/create',
 
 	/**
 	 * The logout path is the path where Administrator will send the user when they click the logout link
 	 *
 	 * @type string
 	 */
-	'logout_path' => false,
+	'logout_path' => '/logout',
 
 	/**
 	 * This is the key of the return path that is sent with the redirection to your login_action. Session::get('redirect') will hold the return URL.
