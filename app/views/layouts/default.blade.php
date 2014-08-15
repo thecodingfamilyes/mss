@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" ng-app="mss">
 <head>
 	<title>MSS</title>
 
@@ -12,28 +12,9 @@
 	<!-- Wrap all page content here -->
     <div id="wrap">
 
-      <!-- Fixed navbar -->
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">MSS</a>
-          </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="/">Home</a></li>
-            </ul>
-
-            @include('toolbar/login')
-
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
+      <header>
+        @include('common/header')
+      </header>
 
       <!-- Begin page content -->
       <div class="container">
@@ -50,14 +31,22 @@
     </div>
 
      {{ Html::script('js/lib/jquery.js') }}
+     {{ Html::script('js/lib/underscore.js') }}
      {{ Html::script('js/lib/angular.js') }}
-     {{ HTML::script('js/bootstrap/transition.js') }}
-     {{ HTML::script('js/bootstrap/collapse.js') }}
-     {{ HTML::script('js/bootstrap/alert.js') }}
-     {{ HTML::script('js/bootstrap/dropdown.js') }}
-     {{ HTML::script('js/bootstrap/tooltip.js') }}
-     {{ HTML::script('js/bootstrap/modal.js') }}
-     {{ HTML::script('js/bootstrap/popover.js') }}
+     {{ Html::script('js/lib/restangular.js') }}
+     {{ Html::script('js/lib/angular-route.js') }}
+     {{ Html::script('js/lib/angular-resource.js') }}
+     {{ Html::script('js/lib/ui-bootstrap.js') }}
+     {{ Html::script('js/bootstrap/dropdown.js') }}
+
+
+     {{ HTML::script('js/mss/app.js') }}
+     {{ HTML::script('js/mss/common/services/me.js') }}
+     {{ HTML::script('js/mss/common/services/api.js') }}
+     {{ HTML::script('js/mss/brotherhoods/controllers/userListCtrl.js') }}
+
+
+
 
 </body>
 </html>

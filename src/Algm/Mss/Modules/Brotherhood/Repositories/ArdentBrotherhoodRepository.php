@@ -1,6 +1,6 @@
 <?php namespace Algm\Mss\Modules\Brotherhood\Repositories;
 
-use Algm\Mss\Modules\Brotherhood\Models\Brotherhood;
+use \Brotherhood;
 use \App;
 use \Auth;
 
@@ -17,7 +17,12 @@ class ArdentBrotherhoodRepository implements BrotherhoodRepository
  * @return Brotherhood model
  */
 	public function create($input = array()) {
-		$Brotherhood = new Brotherhood;
+		$Brotherhood = new Brotherhood($input);
+		$user = 1;
+		if (Auth::check()) {
+			$user = Auth::user()->id;
+		}
+		$Brotherhood->user_id = $user;
 
 		$success = $Brotherhood->save();
 
@@ -53,11 +58,11 @@ class ArdentBrotherhoodRepository implements BrotherhoodRepository
  * Gets the brotherhoods owned by an user
  */
 	public function user($user = null) {
-		if (!$user) {
+		if (!$user && Auth::check()) {
 			$user = Auth::user()->id;
 		}
 
-		return Brotherhood::user($user)->get();
+		return Brotherhood::forUser($user)->limit(3)->get();
 	}
 
 }

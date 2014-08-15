@@ -1,0 +1,63 @@
+<div class="brotherhood-slots" ng-cloak>
+	<h1>
+		Mis hermandades
+	</h1>
+	<div class="brotherhoods-occupied">
+		<div class="count">
+			Disponibles {{remaining}}/3
+		</div>
+		<div class="slot-progress">
+			<div class="progress">
+				<div class="progress-bar" style="width: {{ 100 - 100 * remaining / 3 }}%"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4 slot slot-1">
+			<div ng-if="slots.slot1" class="thumbnail">
+
+				<a ng-href="#/brotherhoods/{{slots.slot1.id}}">
+					<img src="http://placehold.it/640x480">
+				</a>
+
+				<h3>{{slots.slot1.name}}</h3>
+				<p>...</p>
+
+			</div>
+			<a ng-if="!slots.slot1" class="thumbnail empty-slot" ng-click="openForm()">
+				<span class="create-btn"><i class="fa fa-plus fa-lg"></i></span>
+			</a>
+		</div>
+		<div class="col-lg-4 slot slot-2">
+			<div ng-if="slots.slot2" class="thumbnail">
+
+				<a ng-href="#/brotherhoods/{{slots.slot2.id}}">
+					<img src="http://placehold.it/640x480">
+				</a>
+
+				<h3>{{slots.slot2.name}}</h3>
+				<p>...</p>
+
+			</div>
+
+			<a ng-if="!slots.slot2" class="thumbnail empty-slot" ng-click="openForm()">
+				<span class="create-btn"><i class="fa fa-plus fa-lg"></i></span>
+			</a>
+		</div>
+		<div class="col-lg-4 slot slot-3">
+			<div ng-if="slots.slot3" class="thumbnail">
+
+				<a ng-href="#/brotherhoods/{{slots.slot3.id}}">
+					<img src="http://placehold.it/640x480">
+				</a>
+
+				<h3>{{slots.slot3.name}}</h3>
+				<p>...</p>
+
+			</div>
+			<a ng-if="!slots.slot3" class="thumbnail empty-slot" ng-click="openForm()">
+				<span class="create-btn"><i class="fa fa-plus fa-lg"></i></span>
+			</a>
+		</div>
+	</div>
+</div>

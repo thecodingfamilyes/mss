@@ -116,6 +116,7 @@ return array(
 		'Krucas\Notification\NotificationServiceProvider',
 		'Mews\Captcha\CaptchaServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
+		'Nathanmac\Parser\ParserServiceProvider',
 
 		// MSS
 		'Algm\Mss\Services\RepositoryServiceProvider'

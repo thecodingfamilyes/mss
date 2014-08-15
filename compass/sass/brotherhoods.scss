@@ -1,0 +1,17 @@
+.brotherhood-slots {
+	.empty-slot {
+		background: $gray-lighter;
+		color: $gray-light;
+
+		text-align: center;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		.create-btn {
+			font-size: 42px;
+			line-height: 200px;
+		}
+	}
+}

@@ -13,11 +13,15 @@
 
 Route::get('/', function() {
 	if (Auth::check()) {
-		return View::make('brotherhoods/dashboard');
+		return Redirect::to('/app');
 	}
 
 	return View::make('home');
 });
+
+Route::get('/app/{path?}', ['before' => 'auth', function() {
+	return View::make('app');
+}]);
 
 Route::get('/style', function()
 {
@@ -31,14 +35,15 @@ Route::controller('password', 'RemindersController');
 
 Route::get('login', 'SessionsController@create');
 
-Route::get('logout', 'SessionsController@destroy');
+Route::get('logout', ['before' => 'auth','uses' => 'SessionsController@destroy']);
 
 Route::get('terms', function() {
 	return View::make('static/terms');
 });
 
 Route::group([
-	'prefix' => 'api'
+	'prefix' => 'api',
+	'before' => 'auth'
 ], function() {
-	Route::resource('brotherhoods', 'BrotherhoodsApiController');
+	Route::resource('brotherhoods',  'BrotherhoodsApiController');
 });

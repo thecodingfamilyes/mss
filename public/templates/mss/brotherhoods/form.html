@@ -1,0 +1,41 @@
+<div class="modal-header">
+	<h3 class="modal-title">
+		Crear Hermandad
+	</h3>
+</div>
+<div class="modal-body">
+	<div class="brotherhood-create-form">
+		<form novalidate name="form" role="form">
+			<div class="form-group required">
+				<label for="bhname" class="control-label">Nombre</label>
+				<input type="text" class="form-control" id="bhname" placeholder="Nombre de la hermandad" ng-model="brotherhood.name" name="bname" required>
+				<span class="help-block"><i class="fa fa-question-circle text-info fa-fw"></i> Nombre completo de tu hermandad. No pongas <em>"Hermandad de"</em>, el sistema lo pondrá automáticamente y la denominación se actualizará según tu puntuación</span>
+				<span class="help-block" ng-show="form.bname.$dirty">Hermandad de {{brotherhood.name}}</span>
+			</div>
+
+			<div class="form-group">
+				<label for="bhshortname" class="control-label">Nombre corto</label>
+				<input type="text" class="form-control" id="bhshortname" placeholder="Nombre de la hermandad" ng-model="brotherhood.shortname" name="bshortname">
+				<span class="help-block"><i class="fa fa-question-circle text-info fa-fw"></i> (Opcional) Nombre por el que se conoce popularmente a tu hermandad</span>
+			</div>
+
+			<div class="form-group required">
+				<label for="bday" class="control-label">Día de salida</label>
+				<select name="bday" id="bday" class="form-control" placeholder="Selecciona un día" ng-model="brotherhood.day" required>
+					<option value="1">Domingo de Ramos</option>
+					<option value="2">Lunes Santo</option>
+					<option value="3">Martes Santo</option>
+					<option value="4">Miércoles Santo</option>
+					<option value="5">Jueves Santo</option>
+					<option value="6">Viernes Santo</option>
+					<option value="7">Sábado Santo</option>
+					<option value="8">Domingo de Resurrección</option>
+				</select>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="$close()">Aceptar</button>
+	<button class="btn btn-default" ng-click="$dismiss()">Cancelar</button>
+</div>

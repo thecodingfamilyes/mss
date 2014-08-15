@@ -1,8 +1,11 @@
 <?php namespace Algm\Mss\Modules\Brotherhood\Models;
 
 use \LaravelBook\Ardent\Ardent;
+//use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 class Brotherhood extends Ardent {
+
+//	use SoftDeletingTrait;
 
 /**
  * The database table used by the model.
@@ -10,6 +13,20 @@ class Brotherhood extends Ardent {
  * @var string
  */
 	protected $table = 'brotherhoods';
+
+	public $autoHydrateEntityFromInput = true;
+	public $autoPurgeRedundantAttributes = true;
+
+/**
+ * Mass asignment available fields
+ */
+	protected $fillable = [
+		'name',
+		'shortname',
+		'day',
+		'vinculation_id',
+		'badge'
+	];
 
 /**
  * Validation rules
@@ -33,7 +50,7 @@ class Brotherhood extends Ardent {
 /**
  *
  */
-	public function scopeUser($query, $user) {
+	public function scopeForUser($query, $user) {
 		return $query->whereUserId($user);
 	}
 
