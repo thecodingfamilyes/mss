@@ -52,7 +52,11 @@ return array(
 	 *	)
 	 */
 	'menu' => [
-		'usuarios'
+		'Usuarios' => [
+			'users',
+			'roles',
+			'permissions'
+		]
 	],
 
 	/**

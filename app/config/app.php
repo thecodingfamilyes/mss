@@ -119,6 +119,7 @@ return array(
 		'Mews\Captcha\CaptchaServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
 		'Frozennode\Administrator\AdministratorServiceProvider',
+		'Yottaram\AdministratorConfig\AdministratorConfigServiceProvider',
 
 		// MSS
 		'Algm\Mss\Services\RepositoryServiceProvider'
