@@ -78,6 +78,17 @@ App::down(function()
 |
 */
 
+function pr($arr) {
+	echo "<pre>";
+	print_r($arr);
+	echo "</pre>";
+}
+
+function prd($arr) {
+	pr($arr);
+	die;
+}
+
 require app_path().'/filters.php';
 
 //Macros
