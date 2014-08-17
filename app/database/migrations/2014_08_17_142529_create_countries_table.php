@@ -16,7 +16,6 @@ class CreateCountriesTable extends Migration {
 			$table->increments('id');
 			$table->string('name', 200);
 			$table->string('iso', 3)->unique();
-			$table->timestamps();
 		});
 	}
 
