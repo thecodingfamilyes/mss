@@ -55,7 +55,7 @@ return array(
 		'Usuarios' => [
 			'users',
 			'roles',
-			'permissions'
+			'perms'
 		]
 	],
 

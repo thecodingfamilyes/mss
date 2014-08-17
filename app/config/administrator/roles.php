@@ -31,5 +31,10 @@
       'title' => 'Name',
       'type' => 'text',
     ),
+    'perms' => array(
+        'title' => 'Permisos',
+        'type' => 'relationship',
+        'name_field' => 'display_name',
+    ),
   ),
 );

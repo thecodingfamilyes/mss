@@ -37,7 +37,7 @@
     ),
     'display_name' =>
     array (
-      'title' => 'DisplayName',
+      'title' => 'Display Name',
       'type' => 'text',
     ),
   ),
