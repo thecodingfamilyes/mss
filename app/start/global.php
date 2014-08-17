@@ -78,18 +78,9 @@ App::down(function()
 |
 */
 
-function pr($arr) {
-	echo "<pre>";
-	print_r($arr);
-	echo "</pre>";
-}
-
-function prd($arr) {
-	pr($arr);
-	die;
-}
-
 require app_path().'/filters.php';
+
+require app_path().'/helpers.php';
 
 //Macros
 require app_path().'/lib/macros/bootstrapforms.php';
