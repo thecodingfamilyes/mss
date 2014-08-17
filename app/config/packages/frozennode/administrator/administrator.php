@@ -56,7 +56,8 @@ return array(
 			'users',
 			'roles',
 			'perms'
-		]
+		],
+		'brotherhoods'
 	],
 
 	/**

@@ -17,7 +17,6 @@
 		"zizaco/entrust": "1.2.*@dev",
 		"zizaco/factory-muff": "dev-master",
 		"league/fractal": "dev-master",
-		"nathanmac/laravel-parser": "dev-master",
 		"frozennode/administrator": "dev-master",
 		"yottaram/administrator-config": "dev-master"
 	},

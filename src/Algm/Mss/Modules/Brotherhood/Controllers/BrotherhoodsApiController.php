@@ -4,7 +4,7 @@ use Algm\Mss\Modules\Brotherhood\Repositories\BrotherhoodRepository as Repo;
 use Algm\Mss\Modules\Brotherhood\Transformers\BrotherhoodTransformer;
 use League\Fractal\Manager;
 use Way\Tests\Factory;
-use \Parse;
+use \Input;
 
 /**
  *
@@ -34,7 +34,7 @@ class BrotherhoodsApiController extends \Algm\Mss\Controllers\ApiController {
 	}
 
 	public function store() {
-		list($result, $brotherhood) = $this->Brotherhood->create(Parse::payload());
+		list($result, $brotherhood) = $this->Brotherhood->create(Input::json()->all());
 
 		if (!$result) {
 			//dd($brotherhood->errors());

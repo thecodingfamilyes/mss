@@ -14,7 +14,7 @@ Scenario: Try to create a brotherhood
 		"""
 			{
 				"name": "hermandad 1",
-				"shortname": "h1",
+				"shortname": "hdd1",
 				"day": 1
 			}
 		"""

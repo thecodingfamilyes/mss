@@ -118,7 +118,6 @@ return array(
 		'Krucas\Notification\NotificationServiceProvider',
 		'Mews\Captcha\CaptchaServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
-		'Nathanmac\Parser\ParserServiceProvider',
 		'Frozennode\Administrator\AdministratorServiceProvider',
 		'Yottaram\AdministratorConfig\AdministratorConfigServiceProvider',
 

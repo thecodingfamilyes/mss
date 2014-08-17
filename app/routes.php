@@ -33,7 +33,7 @@ Route::resource('sessions', 'SessionsController');
 
 Route::controller('password', 'RemindersController');
 
-Route::get('login', 'SessionsController@create');
+Route::get('login', 'UsersController@create');
 
 Route::get('logout', ['before' => 'auth','uses' => 'SessionsController@destroy']);
 

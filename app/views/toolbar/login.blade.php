@@ -21,6 +21,10 @@
 
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog fa-fw"></i> <i class="fa fa-caret-down fa-fw"></i></a>
 				<ul class="dropdown-menu pull-right" role="menu">
+					@if (Auth::user()->is_admin)
+						<li><a href="/admin"><i class="fa fa-wrench fa-fw"></i> administración</a></li>
+						<li class="divider"></li>
+					@endif
 					<li>
 						<a href="/logout"><i class="fa fa-power-off fa-fw"></i> cerrar sesión</a>
 					</li>
